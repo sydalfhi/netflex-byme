@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web film</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        nav{
+            @apply w-full h-[50px] bg-purple-600 p-3 flex items-center justify-between px-5
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <nav>
+        <h1 class="font-bold text-white text-xl">syaidfilm</h1>
+        <div class="">
+            <input type="text"
+                class="w-[400px] rounded-lg  focus:ring px-5 py-2 placeholder:font-bold  placeholder:text-purple-600"
+                placeholder="cari" id="textcari">
+            <button class="cari bg-white text-purple-600 mx-3 px-[20px] py-[7px] rounded-md font-bold">Search</button>
+        </div>
+    </nav>
+
+
+    <h1 class="font-bold text-black m-10 capitalize">hasil pencarian untuk sdad</h1>
+
+    <div class="container mx-5 grid grid-cols-3 gap-4" id="datafilm">
+
+        <script src="script.js"></script>
+</body>
+
+</html>
