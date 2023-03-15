@@ -5,35 +5,824 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web film</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style type="text/tailwindcss">
-        nav{
-            @apply w-full h-[50px] bg-purple-600 p-3 flex items-center justify-between px-5
-        }
-    </style>
+    <title>netflix</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style type="text/tailwindcss">
+
+
+        /*  ? ======================BASE================== */
+    @layer base{
+        .judulSection{
+            @apply text-3xl font-bold sm:text-4xl font-volkhov text-[#FEF4F4] leading-[40px] lg:leading-[72px]
+        }
+        .font-volkhov{
+            font-family: 'Volkhov', serif;
+        }
+        .font-montserrat{
+            font-family: 'Montserrat', serif;
+        }
+    }
+
+
+    /*  =================================COMPONEN============================= */
+
+/* firs section & nav / 1th section &nav ================== */
+@layer component {      
+           .linkNav{
+               @apply text-[#fef4f4] transition hover:text-gray-500/75 
+           }
+
+           .text-hero{
+                   font-family: 'Volkhov';
+                   letter-spacing: -0.015em;
+                   @apply text-[#FEF4F4] leading-[80px] font-bold 
+           }
+           .paragraft-hero{
+               letter-spacing: -0.015em;
+               @apply text-[13px] lg:text-base font-normal leading-[30px] text-[#E3E1E1] font-montserrat
+           }
+       }
+
+        
+/* card film 4th section ======================*/
+        @layer components{
+            .cardDb{
+                @apply w-[290px] h-[317px] rounded-3xl  border border-[#E3E0E0]/60 text-[#FEF4F4] bg-[##1F2127];
+            }
+            .titleFilm{
+                @apply font-montserrat text-[18px] mt-[18px] font-medium
+            }
+            .gendreFilm{
+                @apply mt-[4px] font-montserrat font-light text-base leading-[30px;];
+                letter-spacing: -0.015em;
+            }
+            .containerRaiting{
+                @apply flex justify-start space-x-2 mt-[6px]   mr-auto items-center
+            }
+            .raitingFilm{
+                @apply font-montserrat text-[13px] text-[#E3E0E0] font-thin
+            }
+        }
+
+
+ /* Paket pembayaran  /5th section ===========================*/
+        @layer components{
+            .container_penawaran{
+                @apply lg:mx-[50px] lg:mt-[24px] grid gap-4 lg:gap-0 grid-cols-1 lg:grid-cols-3
+            }
+            .jenisTingkatan{
+                @apply font-montserrat text-center font-semibold text-xl text-[#FEF4F4] leading-[36px] capitalize
+            }
+            .hargaPembayaran{
+                @apply text-[#DB202C] text-3xl font-montserrat font-semibold mt-6
+            }
+            .fiturAda{
+                    @apply font-normal text-[#FEF4F4] text-base leading-[30px] font-montserrat
+            }
+            .item_penawaran{
+                @apply flex justify-start items-center space-x-3 mt-[14px]
+            }
+            .kartu_pembayaran{
+                @apply w-[80%] lg:w-0 mx-auto lg:mx-0 lg:w-[400px] h-[600px] bg-[#1F2127] rounded-[30px] flex flex-col justify-center  items-center 
+            }
+            .kotak2{
+                background: linear-gradient(168.02deg, #1F2127 3.06%, #373A43 47.56%, #1F2127 96.94%);
+                border: 1px solid #FEF4F4;
+            }
+        }
+
+
+ /* iklan / 6th section ==============================*/
+        @layer components{
+            .container_iklan{
+                @apply p-8 mx-5 lg:px-16 lg:mx-[80px] rounded-[30px] lg:py-14 bg-[#C8CFEC]
+            }
+            .judul_iklan{
+                @apply text-xl font-semibold font-montserrat text-[#1A1C22] 
+            }
+            .input_iklan{
+                @apply w-full rounded-md border-gray-200 bg-white p-3 text-gray-700 shadow-sm transition focus:border-white focus:outline-none focus:ring focus:ring-yellow-400
+            }
+        }
+
+
+        /* footer */
+    @layer components{
+        .foot_item{
+            @apply text-[#fcfcfc] font-bold text-xl
+        }
+        .sub_link_footer{
+            @apply font-normal text-lg leading-[30px] text-[#acacac]
+        }
+        .social_media{
+            @apply rounded-full flex justify-center items-center ;
+        }
+    }
+
+
+
+
+/* =============================utilities ==============================================*/
+/* btn */
+        @layer utilities{
+            .tombol_merah{
+                @apply text-[#fef4f4]  w-full lg:w-[204px] h-[48px] flex place-items-center justify-center tombol-sidebar  font-montserrat font-semibold mt-8
+            }
+            .btnPilihPaket{
+                @apply text-[18px] mt-[50px] text-[#FEF4F4] font-semibold font-montserrat px-[28px] py-[9px]  rounded-[15px] 
+            }
+            .tombol-sidebar {
+                background: linear-gradient(96.02deg, #BC0E19 7.77%, #DB202C 91.68%);
+                box-shadow: 0px 5px 25px rgba(192, 30, 41, 0.5);
+                border-radius: 15px;
+            }
+        }
+
+ /* layanan */
+        @layer utilities{
+                .link_card{
+                    @apply block rounded-[30px] min-h-full lg:min-h-[288px] max-w-[290px]   bg-[#1F2127] p-6 m-auto
+                }
+                .second_judul_card{
+                    font-family: 'Montserrat', serif;
+                    @apply mt-4 text-[17px] lg:text-[18px] font-bold text-[#FEF4F4]
+                }
+                .second_paragraf{
+                    font-family: 'Montserrat', serif;
+                    @apply mt-1 text-sm text-[12px] lg:text-[14px] font-light text-[#E3E0E0]
+                }
+                
+        }
+
+
+
+  </style>
 </head>
 
-<body>
+<body class="bg-[#1A1C22] overflow-x-hidden">
 
+    <!-- navigasi -->
+    <header aria-label="Site Header" class="font-montserrat">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="lg:flex lg:items-center lg:gap-12">
+                    <a class="block text-white" href="/">
+                        <span class="sr-only">Home</span>
+                        <img src="asset/logos_netflix.svg" alt="netflix">
+                    </a>
+                </div>
 
-    <nav>
-        <h1 class="font-bold text-white text-xl">syaidfilm</h1>
-        <div class="">
-            <input type="text"
-                class="w-[400px] rounded-lg  focus:ring px-5 py-2 placeholder:font-bold  placeholder:text-purple-600"
-                placeholder="cari" id="textcari">
-            <button class="cari bg-white text-purple-600 mx-3 px-[20px] py-[7px] rounded-md font-bold">Search</button>
+                <div class="hidden lg:block">
+                    <nav aria-label="Site Nav">
+                        <ul class="flex items-center gap-6 text-sm">
+                            <li>
+                                <a class="linkNav text-[#FEF4F4]" href="/">
+                                    Movies
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="linkNav text-[#FEF4F4]" href="/">
+                                    TV Shows
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="linkNav text-[#FEF4F4]" href="/">
+                                    New & Popular
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div class="sm:flex sm:gap-4">
+                        <a class="rounded-lg  w-[46px] h-[30px] flex items-center   text-sm font-medium text-[#FEF4F4] shadow"
+                            href="/">
+                            ID <span class="ml-2"><img src="asset/panahbawah.svg" alt="panah"
+                                    class="w-[17px] h-[8px]"></span>
+                        </a>
+
+                        <div class="hidden sm:flex">
+                            <a class="rounded-lg tombol-sidebar  px-5 py-2.5 text-sm font-medium text-[#FEF4F4]"
+                                href="/"> Masuk </a> </div>
+                    </div>
+                    <div class="block lg:hidden tombol-sidebar w-[40px] h-[40px] ">
+                        <button class="rounded-sm tombol-sidebar flex justify-center items-center p-2 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
+    </header>
 
 
-    <h1 class="font-bold text-black m-10 capitalize">hasil pencarian untuk sdad</h1>
 
-    <div class="container mx-5 grid grid-cols-3 gap-4" id="datafilm">
 
-        <script src="script.js"></script>
+
+    <!-- first section -->
+    <section>
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+            <div class="grid grid-cols-1 gap-1 lg:grid-cols-2 lg:gap-16">
+                <div class="relative h-full -ml-4 lg:-ml-0 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full ">
+                    <img alt="hero" src="asset/Img-hero.png" />
+                </div>
+
+                <div class="lg:py-24 mt-5 lg:mt-0">
+                    <h2 class="text-hero text-[30px] leading-relaxed lg:text-[56px]">Nikmati Tontonan Dimana Saja, dan
+                        Kapan
+                        Saja</h2>
+
+                    <p class="paragraft-hero  mt-3">
+                        Tonton apa saja secara online dari komputer pribadi atau di perangkat yang terhubung ke Internet
+                        dan mendukung aplikasi Netflix, dan gunakan download untuk menonton saat kamu di perjalanan dan
+                        tidak punya koneksi Internet.
+                    </p>
+
+                    <a href="#" class="tombol_merah">
+                        Daftar Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- second section -->
+    <section class="mt-[90px] lg:mt-[145px] lg:mt-[190px]">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+            <div class="mx-auto max-w-lg text-center">
+                <h2 class="judulSection">
+                    Layanan Terbaik yang Tidak
+                    Mengecewakan</h2>
+
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:grid-cols-4">
+                <!-- todo================================================ -->
+                <a class="link_card" href="#">
+                    <img src="asset/tv.svg" alt="tv">
+                    <h2 class="second_judul_card">Tonton langsung dari TV</h2>
+                    <p class="second_paragraf">
+                        Tonton di Smart TV, Playstation, Xbox, Chromecast, Apple TV, pemutar Blu-ray, dan banyak lagi
+                    </p>
+                </a>
+                <!-- todo================================================ -->
+                <a class="link_card" href="#">
+                    <img src="asset/download.svg" alt="download">
+                    <h2 class="second_judul_card">Download untuk offline</h2>
+                    <p class="second_paragraf">
+                        Simpan dengan mudah agar selalu ada acara TV dan film yang bisa ditonton
+                    </p>
+                </a>
+                <!-- todo================================================ -->
+                <a class="link_card" href="#">
+                    <img src="asset/multi_perangkat.svg" alt="multi_perangkat">
+                    <h2 class="second_judul_card">Akses berbagai perangkat</h2>
+                    <p class="second_paragraf">
+                        Streaming film dan acara TV tak terbatas di ponsel, tablet, laptop, dan TV-mu
+                    </p>
+                </a>
+                <!-- todo================================================ -->
+                <a class="link_card" href="#">
+                    <img src="asset/child.svg" alt="child">
+                    <h2 class="second_judul_card">Buat profil untuk anak</h2>
+
+                    <p class="second_paragraf">
+                        Profil anak dilengkapi kontrol orang tua yang dilindungi PIN sehingga kamu bisa membatasi rating
+                        usia konten yang bisa ditonton anak
+                    </p>
+                </a>
+                <!-- todo================================================ -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- third section -->
+    <section class="">
+        <div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
+                <div class="relative z-10 lg:py-16">
+                    <div class="relative h-64 sm:h-80 lg:h-full mb-10">
+                        <img alt="tv_lebar" src="asset/tv_lebar.png" class="relative z-30" />
+                        <img alt="elips" src="asset/Ellipse 3.png" class="absolute z-0 top-0 w-[600px] lg:-right-20" />
+
+                    </div>
+                </div>
+
+                <div class="relative flex items-center b">
+                    <span class="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block "></span>
+
+                    <div class="p-8 lg:ml-6  sm:p-16 lg:p-24">
+                        <h2 class="text-hero text-[25px] leading-relaxed lg:text-[40px] text-center lg:text-left">
+                            Tonton Film, Acara TV Tak Terbatas, dan Lebih Banyak Lagi
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- fourth section -->
+    <section class="mt-[90px]">
+        <div class="lg:mx-[70px]">
+            <div class=" flex justify-between flex-col lg:flex-row mb-10 ">
+                <h1 class="judulSection text-center lg:text-start lg:w-1/3">Film dan Acara TV Populer Bulan Ini</h1>
+                <a href="#" class="tombol_merah self-end  w-[170px] mx-auto lg:mx-0 ">
+                    Lihat Semua
+                </a>
+            </div>
+            <!-- card card film ================ -->
+            <div class="container grid grid-cols-1 lg:grid-cols-3 lg:w-[80%] lg:ml-auto  gap-5">
+                <!-- card 1 -->
+                <div class="cardDb  flex flex-col items-center justify-center mx-auto lg:mx-0">
+                    <img src="asset/spidermanDb.jpg" alt="spidermandb" class="rounded-2xl">
+                    <div class="card_body block">
+                        <h5 class="titleFilm">Spider-Man: No Way Home</h5>
+                        <p class="gendreFilm">Action, Adventure, Fantasy</p>
+                        <div class="containerRaiting">
+                            <img src="asset/bintang.svg" alt="bintang">
+                            <p class="raitingFilm">8.8/10 Ilgb</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 2-->
+                <div class="cardDb  flex flex-col items-center justify-center mx-auto lg:mx-0">
+                    <img src="asset/arcaneDb.jpg" alt="spidermandb" class="rounded-2xl">
+                    <div class="card_body block">
+                        <h5 class="titleFilm">Arcane: League of Legends</h5>
+                        <p class="gendreFilm">Animation, Action, Adventure</p>
+                        <div class="containerRaiting">
+                            <img src="asset/bintang.svg" alt="bintang">
+                            <p class="raitingFilm">9.2/10 Ilgb</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 3-->
+                <div class="cardDb  flex flex-col items-center justify-center mx-auto lg:mx-0">
+                    <img src="asset/joker.png" alt="spidermandb" class="rounded-2xl">
+                    <div class="card_body block">
+                        <h5 class="titleFilm">Joker</h5>
+                        <p class="gendreFilm">Crime, Drama, Thriller</p>
+                        <div class="containerRaiting">
+                            <img src="asset/bintang.svg" alt="bintang">
+                            <p class="raitingFilm">8.4/10 Ilgb</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end card card film ========= -->
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- sixth section -->
+    <section class="mt-[180px]">
+        <h1 class="judulSection text-center lg:w-1/3  leading-[72px] lg:mx-auto ">Pilih Paket yang Cocok Untukmu</h1>
+
+        <div class="container_penawaran">
+            <!-- ===================================== -->
+            <div class="kartu_pembayaran card_pembayaran ">
+                <h1 id="jenis" class="jenisTingkatan">
+                    basic</h1>
+
+                <h1 class="hargaPembayaran" id="harga">Rp
+                    120,000<span class="text-[#FEF4F4] text-[14px] font-light">/bulan</span></h1>
+
+                <div class="penawaran mt-6 " id="penawaran">
+                    <!-- === -->
+                    <div class="flex justify-start items-center space-x-3">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Ponsel, Tablet,Komputer, TV</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">No Ads</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Batalkan Kapan Saja</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Kualitas Video Baik</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Resolusi 480p</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" class="invisible" alt="cheklis">
+                        <p class="fiturAda text-[#ABACAF] font-light " style="letter-spacing: -0.015em;">Resolusi
+                            720p</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" class="invisible" alt="cheklis">
+                        <p class="fiturAda text-[#ABACAF] font-light " style="letter-spacing: -0.015em;">Resolusi
+                            1080p</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" class="invisible" alt="cheklis">
+                        <p class="fiturAda text-[#ABACAF] font-light " style="letter-spacing: -0.015em;">Resolusi
+                            4K+HDR</p>
+                    </div>
+                </div>
+
+                <a href="#" class="btnPilihPaket border border-[#FEF4F4]">
+                    Pilih Paket
+                </a>
+            </div>
+
+
+            <!-- ===================================== -->
+            <div class="kotak2  border-[1px] border-[#FEF4F4] card_pembayaran kartu_pembayaran ">
+                <h1 id="jenis" class="jenisTingkatan">
+                    Standart</h1>
+
+                <h1 class="hargaPembayaran" id="harga">Rp
+                    153,000<span class="text-[#FEF4F4] text-[14px] font-light">/bulan</span></h1>
+
+                <div class="penawaran mt-6 " id="penawaran">
+                    <!-- === -->
+                    <div class="flex justify-start items-center space-x-3">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Ponsel, Tablet,Komputer, TV</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">No Ads</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Batalkan Kapan Saja</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Kualitas Video Baik</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Resolusi 480p</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" class="" alt="cheklis">
+                        <p class="fiturAda  " style="letter-spacing: -0.015em;">Resolusi
+                            720p</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" class="" alt="cheklis">
+                        <p class="fiturAda  " style="letter-spacing: -0.015em;">Resolusi
+                            1080p</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" class="invisible" alt="cheklis">
+                        <p class="fiturAda text-[#ABACAF] font-light " style="letter-spacing: -0.015em;">Resolusi
+                            4K+HDR</p>
+                    </div>
+                </div>
+
+                <a href="#" class="btnPilihPaket tombol-sidebar ">
+                    Pilih Paket
+                </a>
+            </div>
+
+
+
+            <!-- ===================================== -->
+            <div class="card_pembayaran kartu_pembayaran ">
+                <h1 id="jenis" class="jenisTingkatan">
+                    Premium</h1>
+
+                <h1 class="hargaPembayaran" id="harga">Rp
+                    186,000<span class="text-[#FEF4F4] text-[14px] font-light">/bulan</span></h1>
+
+                <div class="penawaran mt-6 " id="penawaran">
+                    <!-- === -->
+                    <div class="flex justify-start items-center space-x-3">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Ponsel, Tablet,Komputer, TV</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">No Ads</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Batalkan Kapan Saja</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Kualitas Video Baik</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" alt="cheklis">
+                        <p class="fiturAda" style="letter-spacing: -0.015em;">Resolusi 480p</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" class="" alt="cheklis">
+                        <p class="fiturAda " style="letter-spacing: -0.015em;">Resolusi
+                            720p</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" class="" alt="cheklis">
+                        <p class="fiturAda " style="letter-spacing: -0.015em;">Resolusi
+                            1080p</p>
+                    </div>
+                    <!-- === -->
+                    <div class="item_penawaran">
+                        <img src="asset/cheklist.svg" class="" alt="cheklis">
+                        <p class="fiturAda " style="letter-spacing: -0.015em;">Resolusi
+                            4K+HDR</p>
+                    </div>
+                </div>
+
+                <a href="#" class="btnPilihPaket border border-[#FEF4F4]">
+                    Pilih Paket
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- seventh section -->
+    <section class="mt-[180px] font-montserrat">
+        <div class="container_iklan ">
+            <div class="mx-auto max-w-lg text-center">
+                <h2 class="judul_iklan">
+                    Berlangganan Untuk Mendapatkan Informasi Terbaru dan Menjadi Anggota Kami
+                </h2>
+            </div>
+
+            <div class="mx-auto mt-8 max-w-xl">
+                <form action="#" class="sm:flex sm:gap-4">
+                    <div class="sm:flex-1">
+                        <label for="email" class="sr-only">Email</label>
+
+                        <input type="email" placeholder="Masukan Email Anda" class="input_iklan" />
+                    </div>
+
+                    <button type="submit" class="-mt-5 lg:-mt-8">
+                        <a href="#" class="tombol_merah px-10 lg:px-0 ">
+                            Berlangganan
+                        </a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- footer -->
+    <footer aria-label="Site Footer" class="">
+        <div class="mx-auto max-w-screen-xl px pt-16 pb-6  lg:pt-24">
+            <div class="flex justify-evenly items-center lg:items-start gap-8 flex-col lg:flex-row ">
+
+
+
+
+
+                <!-- =========================== -->
+                <div>
+                    <img src="asset/netflexFooter.png" alt="netflix" class="mx-auto lg:mx-0">
+                    <p class="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
+                        Layanan streaming tanpa iklan dan harga bulanan yang murah
+                    </p>
+                </div>
+
+
+
+
+
+                <!-- =========================== -->
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
+
+                    <div class="text-center sm:text-left mt-9 lg:mt-0">
+                        <p class="foot_item font_montserrat ">Perusahaan</p>
+
+                        <nav aria-label="Footer About Nav" class="mt-3 lg:mt-8 ">
+                            <ul class="space-y-2">
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="">
+                                        Tentang Kami
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="">
+                                        Hubungi Kami
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="">
+                                        Karir
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="">
+                                        Blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="">
+                                        Investors Relations
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="text-center sm:text-left mt-9 lg:mt-0">
+                        <p class=" foot_item font_montserrat ">Dapatkan Bantuan</p>
+
+                        <nav aria-label="Footer Services Nav" class="mt-3 lg:mt-8 ">
+                            <ul class="space-y-2 ">
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="/">
+                                        FAQ
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="/">
+                                        Pusat Bantuan
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="/">
+                                        Akun
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+
+                    <div class="text-center sm:text-left mt-9 lg:mt-0">
+                        <p class="foot_item font_montserrat ">Lainnya</p>
+
+                        <nav aria-label="Footer Helpful Nav" class="mt-3 lg:mt-8 ">
+                            <ul class="space-y-2 text">
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="/">
+                                        Tukar Kartu Hadiah
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="/">
+                                        Netflix Originals
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sub_link_footer font-montserrat" href="/">
+                                        Media Center
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+
+                    <div class="text-center sm:text-left mt-9 lg:mt-0">
+                        <p class="foot_item font_montserrat ">Dapatkan Aplikasi Kami</p>
+
+                        <ul class="mt-3 lg:mt-8  text-sm">
+
+                            <li class=" flex justify-between space-x-3 mt-5 lg:mt-1">
+                                <a href="">
+                                    <img src="asset/AppStore.jpg" class="rounded-[15px]" alt="appstore">
+                                </a>
+                                <a href="">
+                                    <img src="asset/Google_Play.jpg" class="rounded-[15px]" alt="playstore">
+                                </a>
+                            </li>
+
+
+                            <li class="flex justify-evenly space-x-3 mt-5 lg:mt-8">
+                                <div class="w-[48px] aspect-[1/1] social_media"
+                                    style="  background: #1A1C22; box-shadow: 0px 2px 10px rgba(64, 67, 78, 0.2);">
+                                    <img src="asset/fb.png" alt="facebook">
+                                </div>
+                                <!--  -->
+                                <div class="w-[48px] aspect-[1/1] social_media" style="background: linear-gradient(149.74deg, #BC0E19 7.68%, #DB202C 92.32%);
+                                box-shadow: 0px 2px 10px rgba(192, 30, 41, 0.25);">
+                                    <img src="asset/ig.png" alt="instagra">
+                                </div>
+                                <!--  -->
+                                <div class="w-[48px] aspect-[1/1] social_media"
+                                    style="  background: #1A1C22; box-shadow: 0px 2px 10px rgba(64, 67, 78, 0.2);">
+                                    <img src="asset/tw.png" alt="instagrtwiter">
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="mt-12  pt-6">
+                <div class="text-center sm:flex sm:justify-between sm:text-left">
+                    <p class="text-sm ">
+                        <span class="block sm:inline"></span>
+
+                        <a class="inline-block text-gray-300 no-underline font-montserrat font-light text-[14px] mx-2"
+                            href="/">
+                            Persyaratan Layanan
+                        </a>
+
+                        <a class="inline-block text-gray-300 no-underline font-montserrat font-light text-[14px] mx-2"
+                            href="/">
+                            Kebijakan Privasi
+                        </a>
+                    </p>
+
+                    <p class="mt-4 text-sm text-gray-300 sm:order-first sm:mt-0">
+                        &copy; 2022 Hak Cipta Terpelihara oleh Netflix Indonesia
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script>
+        alert('ini masih v.1 , ada harapan v1.2 kalau saya tidak lupa & tidak malas')
+    </script>
+
 </body>
 
 </html>
